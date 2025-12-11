@@ -3,35 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goiás Fight MAX - A Maior Plataforma de Lutas, Eventos e Rankings em Goiás</title>
+    <title>Goiás Fight MAX - O Maior Centro de Lutas, Anúncios e Shopping em Goiás</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
+    <a href="javascript:void(0)" class="whatsapp-float" id="whatsapp-float-btn" onclick="openWhatsApp('ola_geral')">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-label">Fale Conosco</span>
+    </a>
+
     <div id="mySidebar" class="sidebar">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <div class="sidebar-content">
-          <h4>MENU PRINCIPAL</h4>
-          <a href="#hero"><i class="fas fa-bullhorn sidebar-icon"></i> Próxima Luta Destaque</a>
-          <a href="#ranking"><i class="fas fa-medal sidebar-icon"></i> Ranking Oficial GO</a>
-          <a href="#listagens"><i class="fas fa-search sidebar-icon"></i> Buscar Profissionais & Eventos</a>
-          <a href="#academias"><i class="fas fa-map-marked-alt sidebar-icon"></i> Academias / Mapa</a>
-          <a href="#news"><i class="fas fa-newspaper sidebar-icon"></i> Últimas Notícias do Estado</a>
-          <a href="#sponsors"><i class="fas fa-handshake sidebar-icon"></i> Patrocinadores</a>
-          <a href="#" onclick="openWhatsApp('cadastro')"><i class="fab fa-whatsapp sidebar-icon whatsapp-icon"></i> Anuncie Aqui!</a>
+          <h4>NAVEGAÇÃO COMERCIAL</h4>
+          <a href="#eventos"><i class="fas fa-bullhorn sidebar-icon"></i> 🥊 Eventos de Luta</a>
+          <a href="#personais"><i class="fas fa-dumbbell sidebar-icon"></i> 💪 Personais Fight</a>
+          <a href="#academias"><i class="fas fa-school sidebar-icon"></i> 🥋 Academias Parceiras</a>
+          <a href="#workshops"><i class="fas fa-chalkboard-teacher sidebar-icon"></i> 🎓 Workshops & Cursos</a>
+          <a href="#shopping"><i class="fas fa-shopping-cart sidebar-icon"></i> 🛍️ Goiás Fight Shopping</a>
           <hr>
-          <h4>MODALIDADES EM DESTAQUE</h4>
-          <a href="#" data-filter="jiujitsu"><i class="fas fa-hand-rock"></i> Jiu-Jitsu Brasileiro</a>
-          <a href="#" data-filter="mma"><i class="fas fa-fist-raised"></i> MMA (Mixed Martial Arts)</a>
-          <a href="#" data-filter="muaythai"><i class="fas fa-fire"></i> Muay Thai / Kickboxing</a>
-          <a href="#" data-filter="boxe"><i class="fas fa-boxing-glove"></i> Boxe</a>
-          <a href="#" data-filter="karate"><i class="fas fa-child"></i> Karatê & Taekwondo</a>
-          <hr>
-          <h4>MINHA CONTA</h4>
-          <a href="#" onclick="showModal('profile-modal-login')"><i class="fas fa-user-circle"></i> Login/Registro</a>
-          <a href="#" onclick="openWhatsApp('ajuda')"><i class="fas fa-question-circle"></i> Suporte</a>
+          <h4>ANUNCIE COM A GENTE!</h4>
+          <a href="#" onclick="openWhatsApp('anuncio_geral')"><i class="fab fa-whatsapp sidebar-icon whatsapp-icon"></i> Anuncie Seu Negócio!</a>
+          <a href="#" onclick="openWhatsApp('suporte')"><i class="fas fa-headset sidebar-icon"></i> Suporte</a>
       </div>
     </div>
 
@@ -40,157 +36,89 @@
         <header class="main-header">
             <div class="container">
                 <button class="openbtn" onclick="openNav()">&#9776; MENU</button>
-                <a href="#hero" class="logo-link">
-                    <h1>GOIÁS FIGHT <span class="tagline">| A PLATAFORMA OFICIAL DA LUTA GOIANA</span></h1>
+                <a href="#eventos" class="logo-link">
+                    <h1>GOIÁS FIGHT <span class="tagline">| MAX PLATAFORMA DE LUTAS EM GOIÁS</span></h1>
                 </a>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="#hero">EVENTOS</a></li>
-                        <li><a href="#listagens">BUSCAR</a></li>
-                        <li><a href="#ranking">RANKING</a></li>
+                        <li><a href="#eventos">EVENTOS</a></li>
+                        <li><a href="#personais">PERSONAIS</a></li>
                         <li><a href="#academias">ACADEMIAS</a></li>
-                        <li><a href="#" onclick="openWhatsApp('anuncio')"><i class="fab fa-whatsapp"></i> ANUNCIE!</a></li>
+                        <li><a href="#shopping">SHOPPING</a></li>
+                        <li><a href="#" onclick="openWhatsApp('anuncio_geral')"><i class="fab fa-whatsapp"></i> ANUNCIE!</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
         <main>
-            <section id="hero" class="hero-section">
+            <section id="eventos" class="eventos-section">
                 <div class="container">
-                    <h2>GOIÁS FIGHT NIGHT 5 - DESTAQUE ABSOLUTO</h2>
-                    <div class="fight-card">
-                        <img src="images/fight_banner.jpg" alt="Banner da Próxima Luta Principal" class="fight-banner">
-                        <div class="fight-details">
-                            <span class="status-badge live">AO VIVO | DIA 15 JAN</span>
-                            <h3 class="fight-title">LUTA PRINCIPAL: Silva vs. Souza</h3>
-                            <p class="date-location"><i class="far fa-calendar-alt"></i> 15 de Janeiro, 20:00h | <i class="fas fa-map-marker-alt"></i> Ginásio Int., Goiânia/GO</p>
-                            <div class="main-event">
-                                <span class="fighter-a" data-id="101" onclick="showProfile(101)">Professor A. Silva</span> 
-                                <span class="vs">VS</span> 
-                                <span class="fighter-b" data-id="102" onclick="showProfile(102)">Mestre B. Souza</span>
-                            </div>
-                            <p class="category">Peso Médio | MMA | Duelo de Títulos</p>
-                            <div class="ticket-options">
-                                <button id="buy-ticket-btn" class="cta-button primary-button">COMPRAR INGRESSO</button>
-                                <button class="cta-button secondary-button" onclick="openWhatsApp('info_evento')">INFO WHATSAPP <i class="fab fa-whatsapp"></i></button>
-                            </div>
+                    <h2>🔥 PRÓXIMOS EVENTOS DE LUTA EM GOIÁS</h2>
+                    <p class="section-description">Os duelos mais esperados de Goiânia e região. Garanta seu ingresso exclusivo via WhatsApp!</p>
+                    <div id="eventos-grid" class="eventos-grid">
                         </div>
+                    <a href="#" class="link-anuncie-final" onclick="openWhatsApp('anuncio_evento')">
+                        <i class="fas fa-bolt"></i> Quer anunciar seu evento no Destaque? Fale conosco no WhatsApp!
+                    </a>
+                </div>
+            </section>
+            
+            <section id="personais" class="personais-section">
+                <div class="container">
+                    <h2>💪 PERSONAIS FIGHT: TREINE COM OS MELHORES</h2>
+                    <p class="section-description">Aulas particulares de Jiu-Jitsu, MMA, Boxe, Muay Thai e mais. Seu próximo campeão começa aqui.</p>
+                    <div id="personais-grid" class="personais-grid">
+                        </div>
+                    <div class="anuncio-box-final">
+                        <p>Destaque seu trabalho para milhares de alunos em potencial.</p>
+                        <a href="#" class="cta-button primary-button" onclick="openWhatsApp('anuncio_personal')">
+                            Quer anunciar seu trabalho? CONTE COM A GENTE <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
             </section>
             
-            <section id="ranking" class="ranking-section">
+            <section id="academias" class="academias-section">
                 <div class="container">
-                    <h2>RANKING OFICIAL | TOP 5 LUTADORES E EVENTOS</h2>
-                    <div class="ranking-tabs">
-                        <button class="tab-button active" data-tab="lutadores">LUTADORES (MMA)</button>
-                        <button class="tab-button" data-tab="jiujitsu">LUTADORES (JIU-JITSU)</button>
-                        <button class="tab-button" data-tab="eventos">PRÓXIMOS EVENTOS</button>
-                    </div>
-                    
-                    <div id="ranking-lutadores" class="ranking-grid tab-content active">
+                    <h2>🥋 ACADEMIAS PARCEIRAS GOIÁS FIGHT</h2>
+                    <p class="section-description">Encontre a melhor academia para sua modalidade, perto de você.</p>
+                    <div id="academias-grid" class="academias-grid">
                         </div>
-                    <div id="ranking-jiujitsu" class="ranking-grid tab-content" style="display: none;">
-                        </div>
-                    <div id="ranking-eventos" class="event-list tab-content" style="display: none;">
-                        </div>
-                    
-                    <a href="#listagens" class="link-full-ranking">Ver RANKING & DATAS Completas &raquo;</a>
+                    <a href="#" class="link-anuncie-final" onclick="openWhatsApp('anuncio_academia')">
+                        <i class="fas fa-map-marked-alt"></i> Sua Academia fora da lista? Anuncie no Diretório!
+                    </a>
                 </div>
             </section>
 
-            <section id="listagens" class="listing-section">
+            <section id="workshops" class="workshops-section">
                 <div class="container">
-                    <h2>DIRETÓRIO: PROFISSIONAIS E ACADEMIAS</h2>
-                    
-                    <div class="filter-panel">
-                        <input type="text" id="search-input" placeholder="Buscar por Nome, Cidade ou Bairro..." class="filter-input">
-                        <select id="filter-type" class="filter-select">
-                            <option value="all">TODOS</option>
-                            <option value="teacher">PROFESSORES/ACADEMIAS</option>
-                            <option value="event">PRÓXIMOS EVENTOS</option>
-                        </select>
-                        <select id="filter-modality" class="filter-select">
-                            <option value="all">MODALIDADE</option>
-                            <option value="jiujitsu">Jiu-Jitsu</option>
-                            <option value="mma">MMA</option>
-                            <option value="muaythai">Muay Thai</option>
-                            <option value="boxe">Boxe</option>
-                            <option value="karate">Karatê</option>
-                        </select>
-                        <button class="cta-button filter-button" id="apply-filters">BUSCAR</button>
-                    </div>
-
-                    <div class="listing-grid">
+                    <h2>🎓 WORKSHOPS E CURSOS DE APERFEIÇOAMENTO</h2>
+                    <p class="section-description">Aprenda novas técnicas com os mestres mais renomados do Brasil.</p>
+                    <div id="workshops-grid" class="workshops-grid">
                         </div>
-
-                    <p id="no-results" style="display: none; margin-top: 30px; font-size: 1.2em; color: var(--primary-color);">Nenhum resultado encontrado para o filtro selecionado.</p>
-                </div>
-            </section>
-            
-            <section id="academias" class="academies-section">
-                <div class="container">
-                    <h2>ENCONTRE SUA ACADEMIA MAIS PRÓXIMA EM GOIÁS</h2>
-                    <div class="academies-map-container">
-                        <div class="map-placeholder">
-                            <p><i class="fas fa-map-marked-alt"></i> SIMULAÇÃO DE MAPA INTERATIVO (Google Maps/OpenStreetMap)</p>
-                            <p>Pinpoint das Academias Destaque em Goiânia, Anápolis, Rio Verde, etc.</p>
-                        </div>
-                        <div class="academy-contact-info">
-                            <h3>Cadastre sua Academia no Mapa!</h3>
-                            <p>Apareça para milhares de novos alunos em todo o estado de Goiás. O cadastro é rápido e profissional.</p>
-                            <button class="cta-button primary-button" onclick="openWhatsApp('cadastro_academia')">CADASTRE-SE VIA WHATSAPP <i class="fab fa-whatsapp"></i></button>
-                        </div>
+                    <div class="anuncio-box-final">
+                        <p>Divulgue seu curso ou seminário com o máximo de alcance em Goiás.</p>
+                        <a href="#" class="cta-button secondary-button" onclick="openWhatsApp('anuncio_workshop')">
+                            ANUNCIE SEU WORKSHOP VIA WHATSAPP <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
             </section>
 
-            <section id="news" class="news-section">
+            <section id="shopping" class="shopping-section">
                 <div class="container">
-                    <h2>ÚLTIMAS NOTÍCIAS E COBERTURA DA LUTA GOIANA</h2>
-                    <div class="news-grid">
+                    <h2>🛍️ GOIÁS FIGHT SHOPPING (Produtos Exclusivos)</h2>
+                    <p class="section-description">Garanta produtos oficiais, equipamentos e acessórios de luta exclusivos.</p>
+                    <div id="shopping-grid" class="shopping-grid">
                         </div>
-                    <a href="#" class="link-full-ranking">Ver Arquivo Completo de Notícias &raquo;</a>
-                </div>
-            </section>
-            
-            <section id="sponsors" class="sponsors-section">
-                <div class="container">
-                    <h2>PATROCINADORES OFICIAIS GOIÁS FIGHT</h2>
-                    <div class="sponsors-grid">
-                        <img src="images/sponsor_01.png" alt="Patrocinador 1" class="sponsor-logo">
-                        <img src="images/sponsor_02.png" alt="Patrocinador 2" class="sponsor-logo">
-                        <img src="images/sponsor_03.png" alt="Patrocinador 3" class="sponsor-logo">
-                        <img src="images/sponsor_04.png" alt="Patrocinador 4" class="sponsor-logo">
-                        <img src="images/sponsor_05.png" alt="Patrocinador 5" class="sponsor-logo">
-                        <img src="images/sponsor_06.png" alt="Patrocinador 6" class="sponsor-logo">
+                    <div class="shopping-footer-callout">
+                        <h3>Venda Exclusiva e Direta</h3>
+                        <p>Todos os pedidos são processados diretamente pelo nosso WhatsApp para um atendimento rápido e personalizado.</p>
+                        <a href="#" class="cta-button primary-button" onclick="openWhatsApp('duvida_shopping')">
+                            DÚVIDAS SOBRE OS PRODUTOS? FALE CONOSCO!
+                        </a>
                     </div>
-                    <button class="cta-button secondary-button" onclick="openWhatsApp('patrocinio')">Seja um Patrocinador <i class="fab fa-whatsapp"></i></button>
-                </div>
-            </section>
-
-            <section id="contato" class="contact-section">
-                <div class="container">
-                    <h3>NEWSLETTER EXCLUSIVA E CONTATO</h3>
-                    <form id="newsletter-form" class="newsletter-form">
-                        <div class="form-row">
-                            <input type="text" id="nl-name" placeholder="Seu Nome Completo" required>
-                            <input type="email" id="nl-email" placeholder="Seu Email Principal" required>
-                        </div>
-                        <div class="form-row">
-                            <select id="nl-interesse" required>
-                                <option value="" disabled selected>Principal Interesse...</option>
-                                <option value="lutador">Sou Lutador Profissional/Amador</option>
-                                <option value="professor">Sou Professor/Dono de Academia</option>
-                                <option value="fan">Sou Fã/Quero Notícias</option>
-                                <option value="midia">Sou Mídia/Imprensa</option>
-                            </select>
-                            <input type="tel" id="nl-whatsapp" placeholder="WhatsApp (Opcional)">
-                        </div>
-                        <button type="submit" class="submit-button">INSCREVER-SE AGORA</button>
-                        <p id="newsletter-feedback" class="feedback-message"></p>
-                    </form>
                 </div>
             </section>
         </main>
@@ -199,69 +127,40 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-col footer-logo">
-                        <h3>GOIÁS FIGHT</h3>
-                        <p>A plataforma #1 de Artes Marciais em Goiás. Conectando atletas, eventos e fãs.</p>
-                        <p class="copyright">&copy; 2024 Goiás Fight. Todos os direitos reservados.</p>
+                        <h3>GOIÁS FIGHT MAX</h3>
+                        <p>A plataforma definitiva para o ecossistema de lutas em Goiás.</p>
+                        <p class="copyright">&copy; 2024 Goiás Fight. Todos os direitos reservados. Contato: (62) 99390-1617</p>
                     </div>
                     <div class="footer-col">
-                        <h4>LINKS RÁPIDOS</h4>
+                        <h4>PILAREs</h4>
                         <ul>
-                            <li><a href="#ranking">Ranking Estadual</a></li>
-                            <li><a href="#listagens">Diretório de Profissionais</a></li>
-                            <li><a href="#academias">Mapa de Academias</a></li>
-                            <li><a href="#news">Blog & Notícias</a></li>
+                            <li><a href="#eventos">Eventos</a></li>
+                            <li><a href="#personais">Personais Fight</a></li>
+                            <li><a href="#academias">Academias</a></li>
+                            <li><a href="#shopping">Shopping</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>SUPORTE & PARCERIAS</h4>
+                        <h4>SUPORTE COMERCIAL</h4>
                         <ul>
-                            <li><a href="#" onclick="openWhatsApp('ajuda')">Suporte Técnico <i class="fab fa-whatsapp"></i></a></li>
-                            <li><a href="#" onclick="openWhatsApp('anuncio')">Anuncie seu Evento <i class="fab fa-whatsapp"></i></a></li>
-                            <li><a href="#" onclick="openWhatsApp('patrocinio')">Parceria/Patrocínio <i class="fab fa-whatsapp"></i></a></li>
+                            <li><a href="#" onclick="openWhatsApp('anuncio_geral')">Anunciar Evento/Serviço <i class="fab fa-whatsapp"></i></a></li>
+                            <li><a href="#" onclick="openWhatsApp('duvida_shopping')">Atendimento Shopping <i class="fab fa-whatsapp"></i></a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
                             <li><a href="#">Termos de Uso</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>SIGA NOSSAS REDES</h4>
+                        <h4>REDES OFICIAIS</h4>
                         <div class="social-links-footer">
-                            <a href="#" title="Instagram Oficial"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/brazillianmiracle/" target="_blank" title="Instagram Oficial"><i class="fab fa-instagram"></i></a>
                             <a href="#" title="Facebook Oficial"><i class="fab fa-facebook-f"></i></a>
                             <a href="#" title="Canal YouTube"><i class="fab fa-youtube"></i></a>
-                            <a href="#" title="Entre em Contato"><i class="fas fa-envelope"></i></a>
                         </div>
-                        <p class="whatsapp-contact-footer"><i class="fab fa-whatsapp"></i> (62) 99390-1617</p>
                     </div>
                 </div>
             </div>
         </footer>
 
-    </div> <div id="profile-modal" class="modal-overlay" style="display: none;">
-        <div class="modal-content profile-content">
-            <span class="close-modal" onclick="closeModal('profile-modal')">&times;</span>
-            <div id="profile-details">
-                </div>
-        </div>
-    </div>
-    
-    <div id="profile-modal-login" class="modal-overlay" style="display: none;">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('profile-modal-login')">&times;</span>
-            <h2>ACESSO AO PAINEL</h2>
-            <p>Faça login ou <a href="#" onclick="openWhatsApp('registro_novo')">registre-se via WhatsApp</a> para gerenciar seus dados.</p>
-            <form class="modal-form">
-                <input type="email" placeholder="Email Cadastrado" required>
-                <input type="password" placeholder="Senha" required>
-                <button type="submit" class="submit-button">ENTRAR</button>
-            </form>
-            <p><a href="#">Esqueceu sua senha?</a></p>
-        </div>
-    </div>
-    
-    <a href="javascript:void(0)" class="whatsapp-float" id="whatsapp-float-btn" onclick="openWhatsApp('ola')">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-label">Fale Conosco</span>
-    </a>
-
-    <script src="script.js"></script>
+    </div> <script src="script.js"></script>
 </body>
 </html>
