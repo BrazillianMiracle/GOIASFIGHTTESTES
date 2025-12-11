@@ -1,9 +1,9 @@
 /* RESET E CONFIGURAÇÕES GERAIS */
 :root {
-    --primary-color: #D90429; /* Vermelho Forte */
-    --secondary-color: #2B2D42; /* Cinza Escuro Quase Preto */
-    --text-color-light: #EDF2F4; /* Branco Quase Puro */
-    --bg-dark: #000000; /* Preto Total */
+    --primary-color: #E63946; /* Vermelho Agressivo (Luta) */
+    --secondary-color: #1D3557; /* Azul Marinho Escuro (Contraste Forte) */
+    --text-color-light: #F1FAEE; /* Branco Quase Puro */
+    --bg-dark: #121212; /* Preto Profundo */
     --font-stack: 'Roboto', sans-serif;
 }
 
@@ -18,28 +18,80 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-color-light);
     line-height: 1.6;
+    transition: margin-left .5s; /* Para transição do menu sidebar */
 }
 
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
 a {
     color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.3s;
 }
 
 a:hover {
     color: var(--text-color-light);
 }
 
-/* HEADER E NAVEGAÇÃO */
+/* ------------------ SIDEBAR (MENU LATERAL) ------------------ */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar a {
+    padding: 15px 25px 15px 35px;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: var(--text-color-light);
+    display: block;
+    transition: 0.3s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar a:hover {
+    color: var(--primary-color);
+    background-color: #244169;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border-bottom: none;
+}
+
+.sidebar-content h4 {
+    color: var(--primary-color);
+    padding: 15px 25px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+/* ------------------ HEADER E NAVEGAÇÃO ------------------ */
 .main-header {
     background-color: var(--secondary-color);
-    padding: 20px 0;
-    border-bottom: 3px solid var(--primary-color);
+    padding: 15px 0;
+    border-bottom: 4px solid var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 50;
 }
 
 .main-header .container {
@@ -49,10 +101,30 @@ a:hover {
 }
 
 .main-header h1 {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: 900;
     color: var(--primary-color);
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+}
+
+.main-header .tagline {
+    font-size: 0.4em;
+    font-weight: 300;
+    color: var(--text-color-light);
+    display: block;
+    margin-top: -5px;
+}
+
+.openbtn {
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    display: none; /* Esconder em desktop */
+    margin-right: 20px;
+    transition: background-color 0.3s;
 }
 
 .main-nav ul {
@@ -61,42 +133,58 @@ a:hover {
 }
 
 .main-nav ul li {
-    margin-left: 30px;
+    margin-left: 35px;
 }
 
 .main-nav ul li a {
     text-transform: uppercase;
     font-weight: 700;
     padding: 5px 0;
-    transition: color 0.3s;
+    position: relative;
 }
 
-/* SEÇÕES GERAIS */
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ------------------ SEÇÕES GERAIS ------------------ */
 section {
     padding: 80px 0;
     text-align: center;
 }
 
 section h2 {
-    font-size: 2.5em;
-    margin-bottom: 50px;
+    font-size: 3em;
+    margin-bottom: 60px;
     text-transform: uppercase;
     color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
     display: inline-block;
     padding-bottom: 10px;
+    font-weight: 900;
 }
 
-/* SEÇÃO DESTAQUE (HERO) */
+/* ------------------ HERO (DESTAQUE) ------------------ */
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('images/bg_fight.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('images/bg_fight.jpg') no-repeat center center/cover;
 }
 
 .fight-card {
     background-color: var(--secondary-color);
     display: flex;
     border: 5px solid var(--primary-color);
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     text-align: left;
 }
@@ -108,22 +196,38 @@ section h2 {
 }
 
 .fight-details {
-    padding: 30px;
+    padding: 40px;
     width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.fight-details h3 {
-    color: var(--primary-color);
-    font-size: 2.2em;
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    font-weight: 700;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
     margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+.fight-details h3 {
+    color: var(--text-color-light);
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.date-location {
+    font-size: 1.1em;
+    color: #AAA;
 }
 
 .main-event {
-    margin: 20px 0;
-    font-size: 1.8em;
+    margin: 25px 0;
+    font-size: 2.5em;
     font-weight: 900;
     text-transform: uppercase;
 }
@@ -141,36 +245,91 @@ section h2 {
     font-size: 1.2em;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 25px;
     transition: background-color 0.3s, transform 0.2s;
     text-transform: uppercase;
 }
 
 .cta-button:hover {
-    background-color: #B00020; 
-    transform: scale(1.05);
+    background-color: #C02936;
+    transform: scale(1.03);
 }
 
-/* SEÇÃO DE LISTAGEM E FILTRO */
-.listing-section {
+/* ------------------ RANKING SECTION ------------------ */
+.ranking-section {
+    background-color: var(--secondary-color);
+}
+
+.ranking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.ranking-card {
     background-color: var(--bg-dark);
+    padding: 25px;
+    border-radius: 8px;
+    border-top: 5px solid var(--primary-color);
+    text-align: center;
+    transition: box-shadow 0.3s;
 }
 
+.ranking-card:hover {
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+}
+
+.ranking-card .rank-number {
+    font-size: 3em;
+    font-weight: 900;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.ranking-card .photo-sm {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px auto;
+    border: 2px solid var(--text-color-light);
+}
+
+.ranking-card h4 {
+    font-size: 1.3em;
+    color: var(--text-color-light);
+    margin-bottom: 5px;
+}
+
+.ranking-card .modality {
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+.link-full-ranking {
+    display: inline-block;
+    margin-top: 40px;
+    font-size: 1.1em;
+    font-weight: 700;
+}
+
+/* ------------------ LISTAGEM GERAL E FILTROS ------------------ */
 .filter-panel {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-bottom: 50px;
-    padding: 20px;
-    background-color: var(--secondary-color);
+    padding: 25px;
+    background-color: #191919;
     border-radius: 8px;
-    max-width: 900px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
+    border: 1px solid var(--secondary-color);
 }
 
 .filter-input, .filter-select {
-    padding: 10px 15px;
+    padding: 12px 15px;
     border: 1px solid var(--primary-color);
     background-color: var(--bg-dark);
     color: var(--text-color-light);
@@ -182,28 +341,37 @@ section h2 {
     flex-grow: 1;
 }
 
+.filter-select {
+    min-width: 180px;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin-top: 0;
+}
+
 .listing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
 }
 
-.teacher-card { /* Usado para professores e pode ser adaptado para eventos */
+.listing-card {
     background-color: var(--secondary-color);
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
-    border: 2px solid var(--primary-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-left: 5px solid var(--primary-color);
     text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.teacher-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(217, 4, 41, 0.4);
+.listing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-.teacher-photo {
+.listing-card .photo-lg {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -212,104 +380,170 @@ section h2 {
     margin-bottom: 15px;
 }
 
-.teacher-card h4 {
-    color: var(--primary-color);
-    font-size: 1.5em;
-    margin-bottom: 5px;
-}
-
-.teacher-card p {
-    margin-bottom: 10px;
-    font-size: 1em;
-}
-
-.teacher-card .style {
+.listing-card .tag-type {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.8em;
     font-weight: 700;
-    color: var(--text-color-light);
-    display: block;
-    margin-bottom: 5px;
+    color: var(--primary-color);
+    text-transform: uppercase;
 }
 
-.teacher-card .location {
-    font-style: italic;
-    font-size: 0.9em;
+/* ------------------ NEWS SECTION ------------------ */
+.news-section {
+    background-color: #191919;
+    border-top: 1px solid var(--secondary-color);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-article {
+    text-align: left;
+    background-color: var(--bg-dark);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.news-article:hover {
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-content h4 {
+    color: var(--primary-color);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.news-content p {
+    font-size: 0.95em;
     color: #AAA;
 }
 
-/* SEÇÃO DE CONTATO E FOOTER (SEM MUDANÇAS SIGNIFICATIVAS) */
+/* ------------------ FOOTER E CONTATO ------------------ */
 .contact-section {
     background-color: var(--secondary-color);
-    border-top: 3px solid var(--primary-color);
-}
-/* ... (Estilos de formulário e footer conforme a versão anterior) ... */
-.contact-section h3 {
-    color: var(--text-color-light);
-    font-size: 2em;
-    margin-bottom: 30px;
+    border-top: 5px solid var(--primary-color);
 }
 
 .newsletter-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    max-width: 700px;
 }
 
-.newsletter-form input {
+.newsletter-form input, .newsletter-form textarea {
     padding: 15px;
     border: 2px solid var(--primary-color);
     background-color: var(--bg-dark);
     color: var(--text-color-light);
     font-size: 1em;
-}
-
-.submit-button {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    border: none;
-    padding: 15px;
-    font-size: 1.1em;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.submit-button:hover {
-    background-color: #B00020;
-}
-
-.feedback-message {
-    margin-top: 15px;
-    font-weight: 700;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .main-footer {
     background-color: var(--bg-dark);
-    padding: 20px 0;
+    padding: 30px 0;
     border-top: 1px solid var(--secondary-color);
 }
 
-.main-footer .container {
+/* ------------------ MODAL STYLES ------------------ */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    font-size: 0.9em;
+    z-index: 2000;
 }
 
-.social-links a {
-    margin-left: 15px;
-    font-size: 1.5em;
-    color: var(--text-color-light);
-    transition: color 0.3s;
+.modal-content {
+    background-color: var(--secondary-color);
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    position: relative;
+    text-align: center;
+    border-top: 5px solid var(--primary-color);
 }
 
-.social-links a:hover {
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
     color: var(--primary-color);
+    cursor: pointer;
 }
 
-/* Responsividade Básica */
+.modal-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--primary-color);
+    color: var(--text-color-light);
+    border-radius: 4px;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+/* ------------------ RESPONSIVIDADE ------------------ */
+@media (max-width: 1024px) {
+    .main-nav {
+        display: none; /* Esconde a navegação principal em telas menores */
+    }
+
+    .openbtn {
+        display: block; /* Mostra o botão do menu lateral */
+    }
+
+    .main-header .container {
+        justify-content: space-between;
+    }
+
+    .main-header h1 {
+        font-size: 1.8em;
+    }
+
+    .filter-panel {
+        flex-direction: column;
+    }
+
+    .filter-select {
+        min-width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
+    section h2 {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+
     .fight-card {
         flex-direction: column;
     }
@@ -319,11 +553,10 @@ section h2 {
     }
 
     .fight-details {
-        padding: 20px;
+        padding: 30px 20px;
     }
 
-    .filter-panel {
-        flex-direction: column;
-        gap: 10px;
+    .ranking-grid, .listing-grid, .news-grid {
+        grid-template-columns: 1fr;
     }
 }
