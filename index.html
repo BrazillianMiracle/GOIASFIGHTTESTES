@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goiás Fight - Onde a Luta de Goiás Acontece</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1>GOIÁS FIGHT</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#eventos">Próxima Luta</a></li>
+                    <li><a href="#listagens">Eventos & Professores</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="eventos" class="hero-section">
+            <div class="container">
+                <h2>PRÓXIMO EVENTO DESTAQUE</h2>
+                <div class="fight-card">
+                    <img src="images/fight_banner.jpg" alt="Banner da Próxima Luta Principal" class="fight-banner">
+                    <div class="fight-details">
+                        <h3>GOIÁS FIGHT NIGHT 5</h3>
+                        <p class="date"><i class="far fa-calendar-alt"></i> 15 de Janeiro, 20:00h</p>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ginásio Internacional, Goiânia/GO</p>
+                        <div class="main-event">
+                            <span class="fighter-a">Professor A. Silva</span> 
+                            <span class="vs">VS</span> 
+                            <span class="fighter-b">Mestre B. Souza</span>
+                        </div>
+                        <p class="category">Peso Médio | MMA</p>
+                        <button id="buy-ticket-btn" class="cta-button">COMPRAR INGRESSO</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="listagens" class="listing-section">
+            <div class="container">
+                <h2>LISTAGEM DE EVENTOS E PROFISSIONAIS</h2>
+                
+                <div class="filter-panel">
+                    <input type="text" id="search-title" placeholder="Pesquisar por título ou nome..." class="filter-input">
+                    <select id="filter-type" class="filter-select">
+                        <option value="all">Tipo (Todos)</option>
+                        <option value="event">Eventos de Luta</option>
+                        <option value="teacher">Professores/Academias</option>
+                    </select>
+                    <select id="filter-modality" class="filter-select">
+                        <option value="all">Modalidade (Todas)</option>
+                        <option value="jiujitsu">Jiu-Jitsu</option>
+                        <option value="muaythai">Muay Thai</option>
+                        <option value="mma">MMA</option>
+                    </select>
+                </div>
+                <div class="listing-grid teachers-grid">
+                    </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contact-section">
+            <div class="container">
+                <h3>Cadastre-se para Receber Novidades</h3>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="text" id="name" placeholder="Seu Nome Completo" required>
+                    <input type="email" id="email" placeholder="Seu Email Principal" required>
+                    <button type="submit" class="submit-button">QUERO RECEBER AS NOTÍCIAS</button>
+                    <p id="message-feedback" class="feedback-message"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2024 Goiás Fight. Desenvolvido para a comunidade de lutas de Goiás.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
